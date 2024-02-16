@@ -36,6 +36,7 @@ function startGame() {
     let secondCard = randomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
+    renderGame()
 }
 
 function renderGame() { //Function renders the game and deals first 2 cards
@@ -43,5 +44,14 @@ function renderGame() { //Function renders the game and deals first 2 cards
     for (i=0; i < cards.length; i++) { //For loop that runs the duration of cards array length and displays players cards
         cardsEl.textContent += cards[i] + " "
     }
+    sumEl.textContent = "Sum: " + sum
+    if (sum < 20) {
+        message = "Do yo want a new card?"
+    } else if (sum === 21) {
+        message = "You've got BlackJack!"
+    } else {
+        message = "You've exeeded 21 and are out of the game!"
+    }
+    messageEl.textContent = message
 
 }

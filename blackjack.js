@@ -45,12 +45,14 @@ function renderGame() { //Function renders the game
         cardsEl.textContent += cards[i] + " "
     }
     sumEl.textContent = "Sum: " + sum
-    if (sum < 20) { // if else statment that display message to player depending on sum cards
+    if (sum < 21) { // if else statment that display message to player depending on sum cards
         message = "Do yo want a new card?"
     } else if (sum === 21) {
         message = "You've got BlackJack!"
+        hasBlackJack = true
     } else {
         message = "You've exeeded 21 and are out of the game!"
+        isAlive = false
     }
     messageEl.textContent = message
 

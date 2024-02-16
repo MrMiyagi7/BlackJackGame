@@ -10,11 +10,12 @@
     <div>
         <h1>BlackJack</h1>
         <p id ="message-el">Want to play a round?</p>
-        <p>Cards: </p>
-        <p>Sum: </p>
-        <button>START GAME</button>
-        <button>NEW CARD</button>
-        <script src="blackjack.js"></script>
+        <p id="cards-el">Cards: </p>
+        <p id="sum-el">Sum: </p>
+        <button onclick="startGame()">START GAME</button><!--Calling startGame function when button is clicked-->
+        <button onclick="newCard()">NEW CARD</button><!--Calling newCard function when button is clicked-->
+        <p id="player-el"></p>
+        <script src="blackjack.js"></script> <!--Linking javascript file to DOM (html document)-->
     </div>
 </body>
 </html>

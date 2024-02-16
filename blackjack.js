@@ -30,3 +30,10 @@ function randomCard() { //Function that returns a random number between 1 and 13
 
 }
 
+function startGame() {
+    isAlive = true
+    let firstCard = randomCard()
+    let secondCard = randomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+}

@@ -30,7 +30,7 @@ function randomCard() { //Function that returns a random number between 1 and 13
 
 }
 
-function startGame() {
+function startGame() {//Function that starts the game and sets starting variables and deals player first 2 cards
     isAlive = true
     let firstCard = randomCard()
     let secondCard = randomCard()
@@ -39,13 +39,13 @@ function startGame() {
     renderGame()
 }
 
-function renderGame() { //Function renders the game and deals first 2 cards
+function renderGame() { //Function renders the game 
     cardsEl.textContent = "Cards: "
     for (i=0; i < cards.length; i++) { //For loop that runs the duration of cards array length and displays players cards
         cardsEl.textContent += cards[i] + " "
     }
     sumEl.textContent = "Sum: " + sum
-    if (sum < 20) {
+    if (sum < 20) { // if else statment that display message to player depending on sum cards
         message = "Do yo want a new card?"
     } else if (sum === 21) {
         message = "You've got BlackJack!"
@@ -54,4 +54,13 @@ function renderGame() { //Function renders the game and deals first 2 cards
     }
     messageEl.textContent = message
 
+} 
+
+function newCard() { //Function that gives player a new random card when new card button is pressed
+    if (isAlive === true && hasBlackJack === false) { //if statment using logical operator that checks if the player has blackjack and is still in the game
+        let card = randomCard()
+        sum += card
+        cards.push(card) //Method which adds new random card to the cards array
+        renderGame()
+    } 
 }
